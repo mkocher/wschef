@@ -28,6 +28,10 @@ run_unless_marker_file_exists("ssl_certificate") do
     command "cd #{ca_path} && openssl req -new -x509 -days 1001 -key #{ca_path}/keys/ca.key -passin pass:password -out #{ca_path}/certs/ca.cert -subj '/CN=mydomain.com/OU=Org Unit/O=My Org Pty Ltd/L=Sydney/ST=NSW/C=AU/emailAddr=someone@example.com'"
     user WS_USER
   end
+  
+  execute "trust our CA" do
+    command "security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain #{ca_path}/certs/ca.cert"
+  end
 
   execute "generate server key" do
     command "openssl genrsa 1024 > #{cert_path}/server.key"
