@@ -1,6 +1,6 @@
 This is not the repository you are looking for
 ==============================================
-This is a trial of how to use boxbuilder with wschef.  Please see [pivotalexperimental/mkocher](http://github.com/pivotalexperimental/wschef) for your regularly scheduled programming.
+This is a trial of how to use boxbuilder with wschef.  Please see [pivotalexperimental/wschef](http://github.com/pivotalexperimental/wschef) for your regularly scheduled programming.
 
 Core Goals
 ==========
